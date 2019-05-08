@@ -3,5 +3,34 @@ box-sizing: border-box;
 }
 
 
-/*HTML 5 support - Sets new HTML 5 tags to display:block so browsers know how to render the tags properly. */ 
+/*HTML 5 support - Sets new HTML 5 tags to display:block so browsers know how to render the tags properly. */
 header, section, footer, aside, nav, article, figure {display: block;}
+
+
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.logo{
+  margin: 0 auto;
+}
+
+.placeholder{
+  margin: 0 auto;
+}
+
+.options{
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: space-around;
+}
+
+.option_value{
+  flex: 1 1 45%;
+}
