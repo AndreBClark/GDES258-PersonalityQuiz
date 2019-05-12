@@ -170,20 +170,21 @@ const questions = [
 // q1.mediaOptions[randomOutput];
 
 // Looping through the question options
-var getOptions = document.getElementsByTagName('label');
 
-		for (var i = 0; i < questions; i++ ) {};
 
-function setQuestionOptions() {
-	for (var i = 0; i < getOptions; i++ ) {
-			getOptions[0].innerText = questions[i].mediaOptions[0];
-			getOptions[1].innerText = questions[i].mediaOptions[1];
-			getOptions[2].innerText = questions[i].mediaOptions[2];
-			getOptions[3].innerText = questions[i].mediaOptions[3];
+var questionOptions = document.getElementsByTagName('label');
+	// for (var i = 0; i < questions.length; i++ ) {
+	// };
+		for (var i = 0; i < questionOptions.length; i++ ) {
+
+		console.log(questionOptions[0].innerText);
 	}
-};
 
-setQuestionOptions();
+	// questionOptions[0].innerHTML = questions[i].mediaOptions[0];
+	// questionOptions[1].innerHTML = questions[i].mediaOptions[1];
+	// questionOptions[2].innerHTML = questions[i].mediaOptions[2];
+	// questionOptions[3].innerHTML = questions[i].mediaOptions[3];
+
 
 
 
@@ -207,7 +208,7 @@ addRadioBtn(q1.mediaOptions[3]);
 */
 
 
-var btn = document.getElementById("btn");
+// var btn = document.getElementById("btn");
 
 
 
@@ -222,17 +223,17 @@ var btn = document.getElementById("btn");
 
 	<div class="placeholder">
 		<!-- <img src="#" alt="What is your Favorite..." /> -->
-		<h2>What is Your Favorite <script>document.write(questions[i].mediaType) </script>?</h2>
+		<!-- <h2>What is Your Favorite<script>questions[i].mediaType</script>?</h2> -->
 	</div>
 
 	<form class="options">
-		<label for="option1"></label>
+		<label for="option1">#</label>
 		<input type="radio" value="#" name="#" class="option_value" id="option1">
-		<label for="option2"></label>
+		<label for="option2">#</label>
 		<input type="radio" value="#" name="#" class="option_value" id="option2">
-		<label for="option3"></label>
+		<label for="option3">#</label>
 		<input type="radio" value="#" name="#" class="option_value" id="option3">
-		<label for="option4"></label>
+		<label for="option4">#</label>
 		<input type="radio" value="#" name="#" class="option_value" id="option4">
 
 		<a href="">Next</a>
