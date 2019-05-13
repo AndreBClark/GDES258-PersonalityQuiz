@@ -204,43 +204,44 @@ q1.mediaOptions[randomOutput];
 
 
 
-// What is Your Favoritequestions[i].mediaType?
 
 
-// Looping through the question options
+
+
 
 var questionOptions = document.getElementsByClassName('questionlabel');
 var nextButton = document.getElementById('nextbtn');
 nextButton.addEventListener("click", setQuestionOptions);
 var theQ = document.getElementById('theQuestion');
-var x = 0;
-
-	// Looping through the question
-	theQ.innerHTML = "What is your Favorite " + questions[x].mediaType[x] + "?";
-
 
 	function setQuestionOptions() {
+		var i = 0;
 
-	   	questionOptions[0].innerHTML = questions[x].mediaOptions[0];
+		for (var x = 0; x < questions.length; x++){
+// Looping through the question
+			theQ.innerHTML = "What is your Favorite " + questions[i].mediaType + "?";
+// Looping through the question options
+			questionOptions[0].innerHTML = questions[x].mediaOptions[0];
 			questionOptions[1].innerHTML = questions[x].mediaOptions[1];
 			questionOptions[2].innerHTML = questions[x].mediaOptions[2];
 			questionOptions[3].innerHTML = questions[x].mediaOptions[3];
-			x++;
+		};
+			i++;
 		};
 
 setQuestionOptions();
 
 // Looping through the ingredients and sets to input userName
-var ingredientsForInput = document.getElementsByTagName('input');
-function ingredientsLoop() {
-for (var i = 0; i < ingredientsForInput.length; i++) {
-	ingredientsForInput[i].childNodes[2].text = question[i].ingredientOptions[0];
-	ingredientsForInput[i].childNodes[2].text = question[i].ingredientOptions[1];
-	ingredientsForInput[i].childNodes[2].text = question[i].ingredientOptions[2];
-	ingredientsForInput[i].childNodes[2].text = question[i].ingredientOptions[3];
-}
-
-}
+// var ingredientsForInput = document.getElementsByTagName('input');
+// function ingredientsLoop() {
+// for (var i = 0; i < ingredientsForInput.length; i++) {
+// 	ingredientsForInput[i].childNodes[2].text = questions[i].ingredientOptions[0];
+// 	ingredientsForInput[i].childNodes[2].text = questions[i].ingredientOptions[1];
+// 	ingredientsForInput[i].childNodes[2].text = questions[i].ingredientOptions[2];
+// 	ingredientsForInput[i].childNodes[2].text = questions[i].ingredientOptions[3];
+// }
+//
+// }
 
 // getQuestion();
 //
