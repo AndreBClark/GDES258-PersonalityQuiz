@@ -193,8 +193,6 @@ addRadioBtn(q1.mediaOptions[3]);
 var btn = document.getElementById("btn");
 
 
-
-
 </script>
 
 <main>
@@ -215,48 +213,28 @@ var btn = document.getElementById("btn");
 	</form>
 
 
+	<div id="answerSummary">
+	</div>
+
+
+
 </main>
 
 
+<button onclick="answers.forEach(myFunction)">View Your Bagel Personality</button>
+<p id="results"></p>
 
+<script>
+answerSummary = document.getElementById("results");
+var answers = ['bagel','spread','meat','cheese','veg1', 'veg2'];
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function myFunction(item, index) {
+	answerSummary.innerHTML = 'Your bagel: <br/>';
+	for (var i = 0; i < answers.length; i++){
+	answerSummary.innerHTML = answerSummary.innerHTML + answers[i] + "<br>"; 
+	}
+}
+</script>
 
 </body>
 </html>
