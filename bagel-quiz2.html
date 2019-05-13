@@ -215,18 +215,17 @@ nextButton.addEventListener("click", setQuestionOptions);
 var theQ = document.getElementById('theQuestion');
 
 	function setQuestionOptions() {
-		var i = 0;
-
-		for (var x = 0; x < questions.length; x++){
+		var x = 0;
+		while (x < questions.length) {
 // Looping through the question
-			theQ.innerHTML = "What is your Favorite " + questions[i].mediaType + "?";
+			theQ.innerHTML = "What is your Favorite " + questions[x].mediaType + "?";
 // Looping through the question options
 			questionOptions[0].innerHTML = questions[x].mediaOptions[0];
 			questionOptions[1].innerHTML = questions[x].mediaOptions[1];
 			questionOptions[2].innerHTML = questions[x].mediaOptions[2];
 			questionOptions[3].innerHTML = questions[x].mediaOptions[3];
 		};
-			i++;
+		x++;
 		};
 
 setQuestionOptions();
