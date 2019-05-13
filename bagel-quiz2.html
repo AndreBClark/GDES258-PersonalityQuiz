@@ -14,6 +14,35 @@
 <div id="questionOptions"></div>
 
 
+
+
+<main>
+
+	<div class="logo">
+		<img src="#" alt="Uptown Bagel Co. Logo" />
+	</div>
+
+	<div class="placeholder">
+		<!-- <img src="#" alt="What is your Favorite..." /> -->
+		<!-- <h2>What is Your Favorite<script>questions[i].mediaType</script>?</h2> -->
+	</div>
+
+	<form class="options">
+		<label class="questionlabel" for="option1">#</label>
+		<input type="radio" value="#" name="input1" class="option_value" id="option1">
+		<label class="questionlabel" for="option2">#</label>
+		<input type="radio" value="#" name="input2" class="option_value" id="option2">
+		<label class="questionlabel" for="option3">#</label>
+		<input type="radio" value="#" name="input3" class="option_value" id="option3">
+		<label class="questionlabel" for="option4">#</label>
+		<input type="radio" value="#" name="input4" class="option_value" id="option4">
+
+	</form>
+
+<a id="nextbtn" href="">Next</a>
+
+</main>
+
 <script>
 
 
@@ -155,44 +184,50 @@ const questions = [
 ];
 
 
-// function getRandomInt(min, max) {
-// 	min = Math.ceil(min);
-// 	max = Math.floor(max);
-// 	return Math.floor(Math.random() * (max - min)) + min;
-// }
-//
-//
-// const q1 = questions[0];
-// var optionsAmt = 5;
-// var randomOutput = getRandomInt(0,7);
-// console.log(randomOutput);
-//
-// q1.mediaOptions[randomOutput];
+function getRandomInt(min, max) {
+	min = Math.ceil(min);
+	max = Math.floor(max);
+	return Math.floor(Math.random() * (max - min)) + min;
+}
+
+
+const q1 = questions[0];
+var optionsAmt = 5;
+var randomOutput = getRandomInt(0,7);
+console.log(randomOutput);
+
+q1.mediaOptions[randomOutput];
+
+
+
 
 // Looping through the question options
 
-
-
-
-var questionOptions = document.getElementsByClassName('questionlabel').firstElement.innerHTML;
-var nextButton = document.getElementsByTagName('a');
-	var i = 0;
+var questionOptions = document.getElementsByClassName('questionlabel');
+var nextButton = document.getElementById('nextbtn');
+nextButton.addEventListener("click", setQuestionOptions);
+	var x = 0;
 	function setQuestionOptions() {
+			questionOptions[0].innerHTML = questions[x].mediaOptions[0];
+			questionOptions[1].innerHTML = questions[x].mediaOptions[1];
+			questionOptions[2].innerHTML = questions[x].mediaOptions[2];
+			questionOptions[3].innerHTML = questions[x].mediaOptions[3];
+			x++;
+		};
 
-			// questionOptions = questions[i].mediaOptions[0];
-			// questionOptions.childNodes[1].innerHTML = questions[i].mediaOptions[1];
-			// questionOptions[2].innerHTML = questions[i].mediaOptions[2];
-			// questionOptions[3].innerHTML = questions[i].mediaOptions[3];
-			i++;
+setQuestionOptions();
 
+// Looping through the ingredients and sets to input userName
+var ingredientsForInput = document.getElementsByTagName('input');
+function ingredientsLoop() {
+for (var i = 0; i < ingredientsForInput.length; i++) {
+	ingredientsForInput[i].childNodes[2].text = question[i].ingredientOptions[0];
+	ingredientsForInput[i].childNodes[2].text = question[i].ingredientOptions[1];
+	ingredientsForInput[i].childNodes[2].text = question[i].ingredientOptions[2];
+	ingredientsForInput[i].childNodes[2].text = question[i].ingredientOptions[3];
+}
 
-};
-
-nextButton.onclick = setQuestionOptions();
-
-
-
-
+}
 
 // getQuestion();
 //
@@ -219,35 +254,6 @@ addRadioBtn(q1.mediaOptions[3]);
 
 
 </script>
-
-<main>
-
-	<div class="logo">
-		<img src="#" alt="Uptown Bagel Co. Logo" />
-	</div>
-
-	<div class="placeholder">
-		<!-- <img src="#" alt="What is your Favorite..." /> -->
-		<!-- <h2>What is Your Favorite<script>questions[i].mediaType</script>?</h2> -->
-	</div>
-
-	<form class="options">
-		<label class="questionlabel" for="option1">#</label>
-		<input type="radio" value="#" name="#" class="option_value" id="option1">
-		<label class="questionlabel" for="option2">#</label>
-		<input type="radio" value="#" name="#" class="option_value" id="option2">
-		<label class="questionlabel" for="option3">#</label>
-		<input type="radio" value="#" name="#" class="option_value" id="option3">
-		<label class="questionlabel" for="option4">#</label>
-		<input type="radio" value="#" name="#" class="option_value" id="option4">
-
-	</form>
-
-<a href="">Next</a>
-
-</main>
-
-
 
 
 
