@@ -10,8 +10,21 @@
 
 <h1>Uptown Bagel Bagel Personality</h1>
 
-<div id="question"></div>
-<div id="questionOptions"></div>
+<div id="question">
+<h2 id="theQuestion"></h2>
+</div>
+<div id="questionOptions">
+	<form class="options">
+		<label class="questionlabel" for="option1">#</label>
+		<input type="radio" value="#" name="input1" class="option_value" id="option1">
+		<label class="questionlabel" for="option2">#</label>
+		<input type="radio" value="#" name="input2" class="option_value" id="option2">
+		<label class="questionlabel" for="option3">#</label>
+		<input type="radio" value="#" name="input3" class="option_value" id="option3">
+		<label class="questionlabel" for="option4">#</label>
+		<input type="radio" value="#" name="input4" class="option_value" id="option4">
+
+	</form></div>
 
 
 
@@ -24,20 +37,10 @@
 
 	<div class="placeholder">
 		<!-- <img src="#" alt="What is your Favorite..." /> -->
-		<!-- <h2>What is Your Favorite<script>questions[i].mediaType</script>?</h2> -->
+
 	</div>
 
-	<form class="options">
-		<label class="questionlabel" for="option1">#</label>
-		<input type="radio" value="#" name="input1" class="option_value" id="option1">
-		<label class="questionlabel" for="option2">#</label>
-		<input type="radio" value="#" name="input2" class="option_value" id="option2">
-		<label class="questionlabel" for="option3">#</label>
-		<input type="radio" value="#" name="input3" class="option_value" id="option3">
-		<label class="questionlabel" for="option4">#</label>
-		<input type="radio" value="#" name="input4" class="option_value" id="option4">
 
-	</form>
 
 <a id="nextbtn" href="">Next</a>
 
@@ -45,7 +48,7 @@
 
 <script>
 
-
+function init(){
 
 var userName;
 var timeOfDay;
@@ -142,7 +145,8 @@ const questions = [
 	mediaOptions: [
 		"Hot Pink",
 		"Bright Yellow",
-		"Neon Green"
+		"Neon Green",
+		"Powder Blue"
 	]
 },
 {
@@ -200,15 +204,24 @@ q1.mediaOptions[randomOutput];
 
 
 
+// What is Your Favoritequestions[i].mediaType?
+
 
 // Looping through the question options
 
 var questionOptions = document.getElementsByClassName('questionlabel');
 var nextButton = document.getElementById('nextbtn');
 nextButton.addEventListener("click", setQuestionOptions);
-	var x = 0;
+var theQ = document.getElementById('theQuestion');
+var x = 0;
+
+	// Looping through the question
+	theQ.innerHTML = "What is your Favorite " + questions[x].mediaType[x] + "?";
+
+
 	function setQuestionOptions() {
-			questionOptions[0].innerHTML = questions[x].mediaOptions[0];
+
+	   	questionOptions[0].innerHTML = questions[x].mediaOptions[0];
 			questionOptions[1].innerHTML = questions[x].mediaOptions[1];
 			questionOptions[2].innerHTML = questions[x].mediaOptions[2];
 			questionOptions[3].innerHTML = questions[x].mediaOptions[3];
@@ -251,7 +264,9 @@ addRadioBtn(q1.mediaOptions[3]);
 // var btn = document.getElementById("btn");
 
 
+};
 
+window.onload = init();
 
 </script>
 
