@@ -226,11 +226,35 @@ function nextQuestion(){
 
 </main>
 
+<hr/>
 
+<form>
+	<label id="form">Tell us your name:<br/>
+		<input id="userName" name="userName" type="text" placeholder="Enter your first name">
+	</label>
+	
+	<button onclick="return saveName()">Start the Quiz</button>
+</form>
+
+<hr>
+
+
+
+<!--
 <button onclick="answers.forEach(myFunction)">View Your Bagel Personality</button>
 <p id="results"></p>
+-->
 
 <script>
+	
+function saveName(){
+	var name = document.getElementById('userName').value;
+	console.log(name);
+	document.getElementById("name").style.display = "none";	
+
+	showQuestion();
+}
+	
 answerSummary = document.getElementById("results");
 var answers = ['bagel','spread','meat','cheese','veg1', 'veg2'];
 
