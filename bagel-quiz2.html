@@ -23,7 +23,7 @@ var answers = new Array;
 const questions = [
 	{
 		ingredientType: "bagelFlavor",
-		mediaType: "80\'s Games",
+		mediaType: "80\'s Game",
 		ingredientOptions: [
 			"Blueberry",
 			"Cranberry",
@@ -47,7 +47,7 @@ const questions = [
 	},
 	 {
 		ingredientType: "spreadFlavor",
-		mediaType: "80\'s Movies",
+		mediaType: "80\'s Movie",
 		ingredientOptions: [
 			"Roasted Red Pepper Frischk&auml;se",
 			"House Frischk&auml;se",
@@ -101,7 +101,7 @@ const questions = [
  },
  {
 	ingredientType: "cheeseOption",
-	mediaType: "Favorite Funky Color",
+	mediaType: "Funky Color",
 	ingredientOptions: [
 		"Cheddar",
 		"Swiss",
@@ -115,7 +115,7 @@ const questions = [
 },
 {
  ingredientType: "veggieOne",
- mediaType: "Iconic 80\'s Characters",
+ mediaType: "Iconic 80\'s Character",
  ingredientOptions: [
 	 "Tomato",
 	 "Red Onion",
@@ -133,7 +133,7 @@ const questions = [
 },
 {
  ingredientType: "veggieTwo",
- mediaType: "Iconic 80\'s Musicians",
+ mediaType: "Iconic 80\'s Musician",
  ingredientOptions: [
 	 "Lettuce",
 	 "Avocado",
@@ -191,6 +191,11 @@ addRadioBtn(q1.mediaOptions[3]);
 
 
 var btn = document.getElementById("btn");
+btn.onclick = nextQuestion;
+
+function nextQuestion(){
+
+}
 
 
 
@@ -212,6 +217,7 @@ var btn = document.getElementById("btn");
 		<input type="radio" value="#" name="#" class="option_value" id="option2"></input>
 		<input type="radio" value="#" name="#" class="option_value" id="option3"></input>
 		<input type="radio" value="#" name="#" class="option_value" id="option4"></input>
+		<input type="button" id="btn" value="next question" name="Next Question"></input>
 	</form>
 
 
