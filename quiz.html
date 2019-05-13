@@ -30,6 +30,100 @@
 
 	    </div>
 	  </div>
+
+<script>
+
+	window.onload = function () {
+
+	  var questionArea = document.getElementsByClassName('questions')[0],
+
+	       answerArea  = document.getElementsByClassName('answers')[0],
+
+	//array that stores all questions and answers
+	allQuestions = {
+	  "Which of these four is your favorite arcade game?" : [
+				"Tron",
+				"Pac-Man",
+				"Tetris",
+				"Rampage",
+				"Galaga",
+				"Donkey Kong",
+				"Frogger",
+				"Joust"
+		],
+
+	  "What is your favorite movie out of these four?" : [
+				"The Goonies",
+				"Planes, Trains & Automobiles",
+				"Terminator",
+				"Bill and Ted's Excellent Adventure",
+				"E.T.",
+				"Sixteen Candles",
+				"Ferris Bueller's Day Off",
+				"Ghostbusters",
+				"Airplane",
+				"Back to the Future",
+				"The Princess Bride"
+		],
+
+	  "What lyrics resonate best with you?" : [
+	 		 "Pour Some Sugar on Me",
+	 		 "Wake me up Before you Go-Go",
+	 		 "Hungry like the Wolf",
+	 		 "Don\'t Stop Believin\'",
+	 		 "Hit me With Your Best Shot",
+	 		 "We Built This City on Rock and Roll",
+	 		 "You Gotta Fight for your Right to Party",
+	 		 "Girls Just Wanna Have Fun"
+ 	 ],
+
+	  "We gotta know - what's your favorite neon color?" : [
+				"Hot Pink",
+				"Bright Yellow",
+				"Neon Green"
+		],
+
+	  "Who is your 80\'s icon?"  [
+		 	 "Maverick",
+		 	 "David Hasselhoff",
+		 	 "Hulk Hogan",
+		 	 "Magnum P.I.",
+		 	 "MacGyver"
+	  ],
+
+	  "Who do you think is the better singer?" : [
+		 	 "David Bowie",
+		 	 "Madonna",
+		 	 "Hall & Oats",
+		 	 "Prince",
+		 	 "U2"
+	  ];
+	};
+
+	//loads all the questions into the questionArea
+	//grabs the current question based on the 'current'-variable
+	function loadQuestion(curr) {
+
+	    var question = Object.keys(allQuestions)[curr];
+	    questionArea.innerHTML = '';
+	    questionArea.innerHTML = question;
+	}
+
+	function loadAnswers(curr) {
+//loads all the possible answers of the given question
+//grabs the needed answer-array with the help of the current-variable
+
+		var answers = allQuestions[Object.keys(allQuestions)[curr]];
+
+		answerArea.innerHTML = '';
+}
+
+	};
+
+</script>
+
+
+
 	</body>
 
 </html>
