@@ -172,18 +172,23 @@ const questions = [
 // Looping through the question options
 
 
-var questionOptions = document.getElementsByTagName('label');
-	// for (var i = 0; i < questions.length; i++ ) {
-	// };
-		for (var i = 0; i < questionOptions.length; i++ ) {
 
-		console.log(questionOptions[0].innerText);
-	}
 
-	// questionOptions[0].innerHTML = questions[i].mediaOptions[0];
-	// questionOptions[1].innerHTML = questions[i].mediaOptions[1];
-	// questionOptions[2].innerHTML = questions[i].mediaOptions[2];
-	// questionOptions[3].innerHTML = questions[i].mediaOptions[3];
+var questionOptions = document.getElementsByClassName('questionlabel').firstElement.innerHTML;
+var nextButton = document.getElementsByTagName('a');
+	var i = 0;
+	function setQuestionOptions() {
+
+			// questionOptions = questions[i].mediaOptions[0];
+			// questionOptions.childNodes[1].innerHTML = questions[i].mediaOptions[1];
+			// questionOptions[2].innerHTML = questions[i].mediaOptions[2];
+			// questionOptions[3].innerHTML = questions[i].mediaOptions[3];
+			i++;
+
+
+};
+
+nextButton.onclick = setQuestionOptions();
 
 
 
@@ -227,18 +232,18 @@ addRadioBtn(q1.mediaOptions[3]);
 	</div>
 
 	<form class="options">
-		<label for="option1">#</label>
+		<label class="questionlabel" for="option1">#</label>
 		<input type="radio" value="#" name="#" class="option_value" id="option1">
-		<label for="option2">#</label>
+		<label class="questionlabel" for="option2">#</label>
 		<input type="radio" value="#" name="#" class="option_value" id="option2">
-		<label for="option3">#</label>
+		<label class="questionlabel" for="option3">#</label>
 		<input type="radio" value="#" name="#" class="option_value" id="option3">
-		<label for="option4">#</label>
+		<label class="questionlabel" for="option4">#</label>
 		<input type="radio" value="#" name="#" class="option_value" id="option4">
 
-		<a href="">Next</a>
 	</form>
 
+<a href="">Next</a>
 
 </main>
 
