@@ -7,7 +7,16 @@
 	<title>Document</title>
 <link rel="stylesheet" href="css/style.css">
 
+<style>
+form {
+	display: none;
+}
 
+.show {
+	display: flex;
+}
+
+</style>
 </head>
 <body>
 	<main>
@@ -15,7 +24,7 @@
 <h1>Uptown Bagel<br>Bagel Personality</h1>
 
 <div id="question">
-<h2 id="theQuestion"></h2>
+<h2 id="theQuestion">Find out what your 80's Bagel is!</h2>
 </div>
 <!-- <div id="questionOptions"> -->
 	<form class="options">
@@ -45,7 +54,7 @@
 
 
 
-<a id="nextbtn" href="">Next</a>
+<a id="nextbtn" href="">Start Quiz</a>
 
 </main>
 
@@ -205,40 +214,37 @@ const questions = [
 // q1.mediaOptions[randomOutput];
 
 
+
 var questionOptions = document.getElementsByClassName('questionlabel');
-var nextButton = document.getElementById('nextbtn');
-nextButton.addEventListener('click', setQuestionOptions());
 var theQ = document.getElementById('theQuestion');
 var x = 0;
-
-	function setQuestionOptions() {
-if(x < 7) {
-
+var nextButton = document.getElementById('nextbtn');
+nextButton.addEventListener ("click", function setQuestionOptions() {
+	var theForm = document.getElementsByTagName('form').className += "show";
+	nextButton.innerHTML = "next";
 // Looping through the question
-			theQ.innerHTML = "What is your Favorite " + questions[x].mediaType + "?";
+	theQ.innerHTML = "What is your Favorite " + questions[x].mediaType + "?";
 // Looping through the question options
-			questionOptions[0].innerHTML = questions[x].mediaOptions[0];
-			questionOptions[1].innerHTML = questions[x].mediaOptions[1];
-			questionOptions[2].innerHTML = questions[x].mediaOptions[2];
-			questionOptions[3].innerHTML = questions[x].mediaOptions[3];
-			next();
+	questionOptions[0].innerHTML = questions[x].mediaOptions[0];
+	questionOptions[1].innerHTML = questions[x].mediaOptions[1];
+	questionOptions[2].innerHTML = questions[x].mediaOptions[2];
+	questionOptions[3].innerHTML = questions[x].mediaOptions[3];
 
-}
+});
 
-else {
-	finishedBagel();
-}
 
-};
 
 function next() {
 	x++;
 	console.log(x);
 }
 
+
+
 function finishedBagel() {
-	document.write("Your Bagel is on its way...");
+	// document.write("Your Bagel is on its way...");
 };
+
 
 
 // Looping through the ingredients and sets to input userName
